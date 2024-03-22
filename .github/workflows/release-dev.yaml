@@ -22,11 +22,11 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.PAT }}
 
-      - uses: wemogy/get-release-version-action@v3.1.0
+      - uses: wemogy/get-release-version-action@v3.1.1
         id: get-release-version
 
       - name: Create GitHub Release
-        uses: wemogy/create-release-action@v0.1.10
+        uses: wemogy/create-release-action@v0.1.11
         with:
           github-token: ${{ secrets.PAT }}
           release-version-tag: ${{ steps.get-release-version.outputs.version-name }}
