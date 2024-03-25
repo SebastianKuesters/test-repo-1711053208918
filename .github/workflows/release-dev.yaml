@@ -26,9 +26,11 @@ jobs:
         id: get-release-version
 
       - name: Create GitHub Release
-        uses: wemogy/create-release-action@v0.1.11
+        uses: wemogy/create-release-action@v0.2.0
         with:
           github-token: ${{ secrets.PAT }}
           release-version-tag: ${{ steps.get-release-version.outputs.version-name }}
           previous-version-tag: ${{ steps.get-release-version.outputs.previous-version-name }}
           release-title: Version ${{ steps.get-release-version.outputs.version }}
+          project-number: "2"
+          project-status-column-name: "Released Dev 🧪"
