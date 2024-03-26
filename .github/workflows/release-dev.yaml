@@ -27,6 +27,7 @@ jobs:
         with:
           mode: "hash-based"
           prefix: "dev-"
+          pre-release: "true"
 
       - name: Create GitHub Release
         uses: wemogy/create-release-action@v0.2.5
