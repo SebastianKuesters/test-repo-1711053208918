@@ -27,7 +27,6 @@ jobs:
         with:
           mode: "hash-based"
           prefix: "dev-"
-          pre-release: "true"
 
       - name: Create GitHub Release
         uses: wemogy/create-release-action@v0.2.5
@@ -36,6 +35,7 @@ jobs:
           release-version-tag: ${{ steps.get-release-version.outputs.version-name }}
           previous-version-tag: ${{ steps.get-release-version.outputs.previous-version-name }}
           release-title: Version ${{ steps.get-release-version.outputs.version }}
+          pre-release: "true"
           label-issues-with: "released-dev"
           project-number: "2"
           project-status-column-name: "Released Dev 🧪"
